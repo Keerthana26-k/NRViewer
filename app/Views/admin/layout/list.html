@@ -1,0 +1,86 @@
+<section class="content-header">
+    <h1>
+        {{@title}}
+        <small>{{@titleDescription}}</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Администрирование</a></li>
+        <li class="active">{{@title}}</li>
+    </ol>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header col-xs-12">
+                    <div class="col-xs-10">
+                        <check if="{{@lastevent}}">
+                            <true>
+                                <h4 class="box-title">Последнее действие:<span class="small text-green">  {{@lastevent | raw}}</span>
+                                </h4>
+                            </true>
+                            <false>
+                                <h4 class="box-title"></h4>
+                            </false>
+                        </check>
+                    </div>
+                    <div class="col-xs-2 text-right">
+                        <form action="{{@PATH}}" method="post">
+                            <input type="hidden" name="ID"
+                                   value="0">
+                            <button class="btn btn-xs btn-success" type="submit" name="manageMode" value="edit"><i
+                                    class="fa fa-plus"> <strong>Добавить</strong></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="box-body">
+
+
+                    <table class="table table-hover table-bordered table-condensed dataTable" id="listTable">
+                        <thead>
+
+                        <!-- Заголовки таблицы             -->
+                        <include href="{{@tableheader}}"/>
+
+                        </thead>
+
+                        <tbody>
+                        <!-- Если нажали кнопку Добавить, то открываем чистые поля для ввода             -->
+                        <check if="{{@edit&(@editID==0)}}">
+                            <tr>
+                                <include href="{{@add}}"/>
+                            </tr>
+                        </check>
+
+
+                        <repeat group="{{ @tableItems }}" value="{{ @tableItem }}">
+
+
+                            <tr>
+                                <form action="{{@PATH}}" method="post">
+                                    <!--  Работа с конкретными полями в отдельном шаблоне                -->
+                                    <include href="{{@tablebody}}"/>
+
+                                    <td>
+
+                                        <!--  Кнопки управления в отдельном шаблоне                -->
+                                        <include href="admin/layout/actionsbtn.html"/>
+
+                                    </td>
+                                </form>
+                            </tr>
+
+                        </repeat>
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

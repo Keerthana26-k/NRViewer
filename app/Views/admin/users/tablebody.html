@@ -1,0 +1,36 @@
+<!--suppress ALL -->
+<td>
+    <span>{{@tableItem['ID']}}</span>
+    <input type="hidden" name="ID"
+           value="{{@tableItem['ID']}}">
+</td>
+<td><span class="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'hide' : ''}}">{{@tableItem['LOGIN']}}</span>
+    <label>
+        <input type="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'text' : 'hidden'}}"
+               name="Login"
+               value="{{@tableItem['LOGIN']}}">
+    </label>
+</td>
+<td><span
+        class="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'hide' : ''}}">**********</span>
+    <label>
+        <input type="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'text' : 'hidden'}}"
+               name="Password"
+               value="{{@tableItem['PASSWD']}}">
+    </label>
+</td>
+
+<td><span class="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'hide' : ''}}">{{@tableItem['EMAIL']}}</span>
+    <label>
+        <input type="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'email' : 'hidden'}}"
+               name="Email"
+               value="{{@tableItem['EMAIL']}}">
+    </label>
+</td>
+<td><span class="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'hide' : ''}}">{{@tableItem['GROUPS']}}</span>
+    <label>
+        <input type="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'text' : 'hidden'}}"
+               name="Groups"
+               value="{{@tableItem['GROUPS']}}">
+    </label>
+</td>

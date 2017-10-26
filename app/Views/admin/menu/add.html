@@ -1,0 +1,85 @@
+<form action="{{@PATH}}" method="post">
+    <td>
+
+    </td>
+    <td>
+        <span></span>
+    </td>
+    <td>
+        <label>
+            <input class="form-control input-sm"
+                   type="text"
+                   name="Title"
+                   value="">
+        </label>
+    </td>
+
+    <td>
+        <label>
+            <select name="ParentID">
+
+                <option value="0">/</option>
+                <repeat group="{{ @tableItems2 }}" value="{{ @tableItem2 }}">
+                    <option value="{{@tableItem2['ID']}}">{{@tableItem2['TITLE']}}</option>
+                </repeat>
+
+
+            </select>
+        </label>
+
+
+    </td>
+    <td>
+        <label>
+            <input type="text"
+                   name="Description"
+                   value="">
+        </label>
+    </td>
+    <td>
+
+        <label>
+            <input type="text"
+                   name="Link"
+                   value="">
+        </label>
+    </td>
+    <td>
+        <label>
+            <input
+                    type="radio"
+                    name="IsPage"
+                    value="1"
+            >
+            Страница
+        </label>
+        <label>
+            <input
+                    type="radio"
+                    name="IsPage"
+                    value="0"
+                    checked>
+            Раздел
+        </label>
+    </td>
+    <td class="text-center">
+        <label>
+            <select name="Icon">
+
+                <repeat group="{{ @listIcons }}" value="{{ @icon }}">
+                    <option value="{{@icon}}">{{@icon}}</option>
+                </repeat>
+            </select>
+        </label>
+
+
+    </td>
+    <td>
+
+        <button class="btn btn-xs bg-black-active"
+                type="submit" name="manageMode" value="add">
+            <i class="fa fa-save"> <strong>Save</strong></i>
+        </button>
+
+    </td>
+</form>

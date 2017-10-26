@@ -1,0 +1,36 @@
+<!--suppress ALL -->
+
+<td>
+    <input type="hidden"
+           name="ID"
+           value="{{@tableItem['ID']}}">
+
+    <span
+            class="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'hide' : ''}}">{{@tableItem['P_KEY']}}</span>
+    <label>
+        <input type="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'text' : 'hidden'}}"
+               name="Key"
+               value="{{@tableItem['P_KEY']}}">
+    </label>
+</td>
+
+
+<td><span class="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'hide' : ''}}">{{@tableItem['P_VALUE']}}</span>
+    <label>
+        <input type="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'text' : 'hidden'}}"
+               name="Value"
+               value="{{@tableItem['P_VALUE']}}">
+    </label>
+</td>
+<td><span class="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'hide' : ''}}">{{@tableItem['P_DESC']}}</span>
+    <label>
+        <textarea class="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'text' : 'hidden'}}"
+                  name="Description"
+                  value=""
+                  rows="3"
+                  cols="100"
+        >
+            {{@tableItem['P_DESC']}}
+        </textarea>
+    </label>
+</td>

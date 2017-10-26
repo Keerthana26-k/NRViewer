@@ -1,0 +1,87 @@
+<!--suppress ALL -->
+
+
+<td>
+    <span>{{@tableItem['ID']}}</span>
+    <input type="hidden" name="ID"
+           value="{{@tableItem['ID']}}">
+</td>
+<td><span class="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'hide' : ''}}">{{@tableItem['PARENT_ID']}}</span>
+    <input type="hidden" name="ParentID"
+           value="{{@tableItem['PARENT_ID']}}">
+</td>
+<td><span
+        class="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'hide' : ''}}">{{@tableItem['TITLE']}}</span>
+    <label>
+        <input type="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'text' : 'hidden'}}"
+               name="Title"
+               value="{{@tableItem['TITLE']}}">
+    </label>
+</td>
+
+<td><span class="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'hide' : ''}}">{{@tableItem['PARENT_TITLE']}}</span>
+
+
+    <label>
+        <select class="{{isset(@edit)&(@tableItem['ID']==@editID) ? '' : 'hide'}}"
+                name="ParentID">
+            <option value="{{@tableItem['PARENT_ID']}}">{{@tableItem['PARENT_TITLE']}}
+            </option>
+            <repeat group="{{ @tableItems2 }}" value="{{ @tableItem2 }}">
+                <option value="{{@tableItem2['ID']}}">{{@tableItem2['TITLE']}}</option>
+            </repeat>
+
+
+        </select>
+    </label>
+
+
+</td>
+<td><span class="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'hide' : ''}}">{{@tableItem['DESCRIPTION']}}</span>
+    <label>
+        <input type="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'text' : 'hidden'}}"
+               name="Description"
+               value="{{@tableItem['DESCRIPTION']}}">
+    </label>
+</td>
+<td><span
+        class="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'hide' : ''}}">{{@tableItem['LINK']}}</span>
+    <label>
+        <input type="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'text' : 'hidden'}}"
+               name="Link"
+               value="{{@tableItem['LINK']}}">
+    </label>
+</td>
+<td><span class="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'hide' : ''}}">{{@tableItem['IS_PAGE'] ? 'Страница' : 'Раздел'}}</span>
+    <span class="{{isset(@edit)&(@tableItem['ID']==@editID) ? '' : 'hide'}}"><label>
+<input
+        type="radio"
+        name="IsPage"
+        value="1"
+        {{@tableItem['IS_PAGE'] ? 'checked' : ''}}>
+        Страница
+</label></span>
+    <span class="{{isset(@edit)&(@tableItem['ID']==@editID) ? '' : 'hide'}}"><label class="">
+<input
+        type="radio"
+        name="IsPage"
+        value="0"
+        {{@tableItem[
+'IS_PAGE'] ? '' : 'checked'}}>Раздел
+</label></span>
+</td>
+<td class="text-center"><span
+        class="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'hide' : ''}}"><i
+        class="fa fa-2x {{@tableItem['ICON']}}"></i></span>
+    <label>
+        <select class="{{isset(@edit)&(@tableItem['ID']==@editID) ? '' : 'hide'}} "
+                name="Icon">
+            <option value="{{@tableItem['ICON']}}">{{@tableItem['ICON']}}</option>
+            <repeat group="{{ @listIcons }}" value="{{ @icon }}">
+                <option value="{{@icon}}">{{@icon}}</option>
+            </repeat>
+        </select>
+    </label>
+
+
+</td>

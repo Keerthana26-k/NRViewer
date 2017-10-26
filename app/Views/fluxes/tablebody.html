@@ -1,0 +1,26 @@
+<!--suppress ALL -->
+
+<td>
+    <span>{{@tableItem['ID']}}</span>
+    <input type="hidden" name="ID"
+           value="{{@tableItem['ID']}}">
+</td>
+
+<td><span
+        class="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'hide' : ''}}">{{@tableItem['CAPTION']}}</span>
+    <label>
+        <input type="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'text' : 'hidden'}}"
+               name="Caption"
+               value="{{@tableItem['CAPTION']}}">
+    </label>
+</td>
+
+
+<td><span class="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'hide' : ''}}">{{@tableItem['DESCRIPTION']}}</span>
+    <label>
+        <input type="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'text' : 'hidden'}}"
+               name="Description"
+               value="{{@tableItem['DESCRIPTION']}}">
+    </label>
+</td>
+

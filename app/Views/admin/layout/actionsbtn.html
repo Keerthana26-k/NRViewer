@@ -1,0 +1,12 @@
+<div class="btn-group">
+    <button class="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'hide' : ''}} btn btn-xs btn-primary"
+            type="submit" name="manageMode" value="edit"><i class="fa fa-edit"> <strong>Edit</strong></i>
+    </button>
+    <button class="{{isset(@edit)&(@tableItem['ID']==@editID) ? 'hide' : ''}} btn btn-xs btn-danger"
+            type="submit" name="manageMode" value="delete"><i class="fa fa-trash"> <strong>Del</strong></i>
+    </button>
+    <button class="{{isset(@edit)&(@tableItem['ID']==@editID) ? '' : 'hide'}} btn btn-xs bg-black-active"
+            type="submit" name="manageMode" value="save">
+        <i class="fa fa-save"> <strong>Save</strong></i>
+    </button>
+</div>

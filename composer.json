@@ -1,0 +1,27 @@
+{
+  "name": "nrviewer",
+  "license": "proprietary",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Gennadiy Lebedev",
+      "email": "g.lebedev@auchan.ru"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree": ">=3.6 <4.0.0",
+    "components/bootstrap": ">=3.3 <4.0.0",
+    "components/font-awesome": ">=4.7 <5.0.0",
+    "symfony/var-dumper": ">=3.3 <4.0.0",
+    "knplabs/knp-menu": ">=2.2 <3.0.0",
+    "devster/ubench": "1.2.0",
+    "almasaeed2010/adminlte": "v2.4.0",
+    "bootstrap-select/bootstrap-select": "1.12.4",
+    "phpmd/phpmd": "2.6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "NRViewer\\": "app"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <check if="{{isset(@title)}}">
+        <true>
+            <title>{{ @title . ' | ' . @SITENAME}}</title>
+        </true>
+        <false>
+            <title>{{@SITENAME}}</title>
+        </false>
+    </check>
+    <base href="{{ @BASE }}/">
+
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="vendor/components/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="vendor/components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="vendor/almasaeed2010/adminlte/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet"
+          href="vendor/almasaeed2010/adminlte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="vendor/almasaeed2010/adminlte/dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="vendor/almasaeed2010/adminlte/dist/css/skins/_all-skins.min.css">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="vendor/almasaeed2010/adminlte/bower_components/jvectormap/jquery-jvectormap.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet"
+          href="vendor/almasaeed2010/adminlte/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet"
+          href="vendor/almasaeed2010/adminlte/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+    <!-- Bootstrap-Select -->
+    <link rel="stylesheet" href="vendor/bootstrap-select/bootstrap-select/dist/css/bootstrap-select.css">
+
+
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Google Font -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+</head>
+<body class="hold-transition skin-red-light sidebar-mini sidebar-collapse">
+<div class="wrapper">
+
+    <include href="layout/mainheader.html"/>
+
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+
+
+            {{@menu |raw}}
+
+        </section>
+    </aside>
+
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+
